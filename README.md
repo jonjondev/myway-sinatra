@@ -30,7 +30,7 @@ $ rackup -p 3000
 ## To Do
 
 * ~~Base App With Modular Controllers~~
-* API boilerplate module
+* ~~API boilerplate module~~
 * Use Puma for Server
 * Automatic Code Reloading
 * Controller Tests
