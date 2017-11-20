@@ -16,7 +16,7 @@ $ bundle
 To get the project running at `localhost:3000` run:
 
 ```bash
-$ rackup -p 3000
+$ puma
 ```
 
 ## Contributing
@@ -31,7 +31,10 @@ $ rackup -p 3000
 
 * ~~Base App With Modular Controllers~~
 * ~~API boilerplate module~~
-* Use Puma for Server
+* ~~Use Puma for Server~~
+* Make Heroku-Ready
 * Automatic Code Reloading
 * Controller Tests
+* Set Up CodeClimate & Travis
 * Add APIDoc/Swagger
+* Add Template Generation

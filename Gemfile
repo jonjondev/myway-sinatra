@@ -4,4 +4,5 @@ source "https://rubygems.org"
 ruby '2.4.1'
 
 gem 'sinatra', '~> 2.0.0'
-gem 'json'
+gem 'puma', '3.10.0'
+gem 'json', '~> 2.0.2'
