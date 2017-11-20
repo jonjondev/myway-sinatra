@@ -1,4 +1,5 @@
 # MyWay: The Sinatra controller with infinite possibilities
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 MyWay is a **barebones Sinatra controller with modular boilerplates that provide examples for both API and web-app usage**... and it's super suave.
 
@@ -32,7 +33,7 @@ $ puma
 * ~~Base App With Modular Controllers~~
 * ~~API boilerplate module~~
 * ~~Use Puma for Server~~
-* Make Heroku-Ready
+* ~~Make Heroku-Ready~~
 * Automatic Code Reloading
 * Controller Tests
 * Set Up CodeClimate & Travis
