@@ -5,6 +5,10 @@ class ApplicationController < Sinatra::Base
 	set :public_folder, File.expand_path('../../public', __FILE__)
 	set :views, File.expand_path('../../views', __FILE__)
 
+	configure :development do
+	  enable :logging
+	end
+
 	get '/' do
 		erb :home
 	end
