@@ -2,6 +2,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/reloader'
 require 'json'
 
 # Sets Puma as default server

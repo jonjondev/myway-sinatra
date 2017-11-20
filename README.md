@@ -34,7 +34,7 @@ $ puma
 * ~~API boilerplate module~~
 * ~~Use Puma for Server~~
 * ~~Make Heroku-Ready~~
-* Automatic Code Reloading
+* ~~Automatic Code Reloading~~
 * Controller Tests
 * Set Up CodeClimate & Travis
 * Add APIDoc/Swagger
