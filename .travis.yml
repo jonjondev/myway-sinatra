@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.2
+  - jruby
+  - 2.4.1-p111
+branches:
+  only:
+    - "master"
+script: rspec

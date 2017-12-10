@@ -20,6 +20,14 @@ To get the project running at `localhost:3000` run:
 $ puma
 ```
 
+## Testing
+
+To test the project run:
+
+```bash
+$ rspec
+```
+
 ## Contributing
 
 1. Fork it
@@ -35,7 +43,8 @@ $ puma
 * ~~Use Puma for Server~~
 * ~~Make Heroku-Ready~~
 * ~~Automatic Code Reloading~~
-* Controller Tests
-* Set Up CodeClimate & Travis
-* Add APIDoc/Swagger
+* ~~Controller Tests~~
+* ~~Set Up Travis~~
+* Set Up CodeCodeClimate
 * Add Template Generation
+* Add APIDoc/Swagger
