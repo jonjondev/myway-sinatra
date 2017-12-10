@@ -1,5 +1,6 @@
 # MyWay: The Sinatra controller with infinite possibilities
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+[![Build Status](https://travis-ci.org/J-Mo63/myway-sinatra-api.svg?branch=master)](https://travis-ci.org/J-Mo63/myway-sinatra-api)
 
 MyWay is a **barebones Sinatra controller with modular boilerplates that provide examples for both API and web-app usage**... and it's super suave.
 
