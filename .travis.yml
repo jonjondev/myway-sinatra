@@ -3,5 +3,11 @@ rvm:
   - 2.4.1
 branches:
   only:
-    - "master"
+    - master
 script: rspec
+deploy:
+  provider: heroku
+  app: myway-test
+  on: master
+  api_key:
+    secure: gMGHbIWh54csmSegp12r+zFSXSeQbNZSjMe8Gj4HPEsJJxTYQuhRtOXDcIrSN8pyG1aYKz8O5cZB8CH5WiznWPu/cHG7EU81ir8P7JL2D85gdLM1KZqTAp9x8ESHUU8PUEErXGsLyBrMpwJC40vjvTrRP4O6nczi8D3iWhkmWYcX0OdmGlh4Jn6NqZs46WrBzWUNy/ldGMnml79AnpYaZLmXAea80x3AN6yAobVsvtqIozXLmjmDdIkrBl4ufvqPDmMCmsAkYi71xAPV4K/m+AH3yN0OaO0ImFH5tWT4FJPoTYqe5KQGss8N3cs6ld1a4LqDp658sWq3i94ZEl8Dlb8svizesYBdLdrfzwrQL39e3AlnoXpAuF62jXW4RDM2RrY+UD7g1zFgB6DZ869tCajy0ziYg1jVOBCPWQitrNM5hYUxm4LNv3CYYxZCwAMAR/112QkDkegvvgto0yDqGpz6YbUntfYrZHvS9d4WXKSy8KYTRVhwrvR2KXk8yG1709fvHsNBdEQltJWJVlpCa2bVFAe5ZQEdi1kRY5EoFQ9qsnwknmWDzMKOgT9Fk4vfXkc8R/gLqpfnJh8HdvXAhWW2LJ32oJdg9a8xZJ+QleZVoFG/MvVuEnY+E0U7jagfpybIuKbcq22UC5fWCYxj/oxBw0+oupifOl9366d+SAI=
