@@ -7,8 +7,5 @@ gem 'sinatra', '~> 2.0.0'
 gem 'puma', '3.10.0'
 gem 'json', '~> 2.0.2'
 gem 'sinatra-reloader', '~> 1.0'
-
-group :development, :test do
-	gem 'rspec'
-  gem 'rack-test'
-end
+gem 'rspec'
+gem 'rack-test'
