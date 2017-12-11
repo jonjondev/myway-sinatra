@@ -1,6 +1,10 @@
+# Requires the spec_helper conteiniing code to set up testing
 require File.expand_path(File.join('helpers', 'spec_helper'))
 
+# Test for application controller routes
 describe 'ApplicationController' do
+
+	# Defines app as the tested controller
   def app
     ApplicationController
   end

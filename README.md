@@ -1,6 +1,8 @@
 # MyWay: The Sinatra controller with infinite possibilities
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 [![Build Status](https://travis-ci.org/J-Mo63/myway-sinatra-api.svg?branch=master)](https://travis-ci.org/J-Mo63/myway-sinatra-api)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+
 
 MyWay is a **barebones Sinatra controller with modular boilerplates that provide examples for both API and web-app usage**... and it's super suave.
 
@@ -46,6 +48,7 @@ $ rspec
 * ~~Automatic Code Reloading~~
 * ~~Controller Tests~~
 * ~~Set Up Travis~~
+* Set Up CodeCov
 * Set Up CodeCodeClimate
 * Add Template Generation
 * Add APIDoc/Swagger

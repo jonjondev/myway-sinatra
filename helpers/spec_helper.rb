@@ -1,15 +1,18 @@
-ENV['RACK_ENV'] = 'test'
+# A helper file made to be run before specs for setup
 
+# Reuqires the necessary gems
 require 'sinatra'
-
-require File.expand_path(File.join('config', 'application'))
 require 'rspec'
 require 'rack/test'
 
+# Requires all run project files
+require File.expand_path(File.join('config', 'application'))
+
+# Gives Rspec access to Rack/Test methods
 RSpec.configure do |conf|
   conf.include Rack::Test::Methods
 end
 
+# Sets up the testing environment
+ENV['RACK_ENV'] = 'test'
 set :environement, :test
-
-include Rack::Test::Methods
