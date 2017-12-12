@@ -2,7 +2,7 @@
 class ExampleController < ApplicationController
 	helpers ExampleHelper
 
-	# Displays example.rb at localhost:9292/example
+	# Displays example.rb at localhost:3000/example
   get '/' do
 	  erb :example
 	end

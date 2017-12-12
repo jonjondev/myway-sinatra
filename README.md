@@ -43,12 +43,11 @@ $ rspec
 ## To Do
 
 * ~~Base App With Modular Controllers~~
-* ~~API boilerplate module~~
+* ~~API Boilerplate Module~~
 * ~~Use Puma for Server~~
 * ~~Make Heroku-Ready~~
 * ~~Automatic Code Reloading~~
 * ~~Controller Tests~~
 * ~~Set Up Travis~~
-* ~~Set Up CodeCodeClimate~~
-* Add Template Generation
-* Add APIDoc/Swagger
+* ~~Set Up CodeClimate~~
+* Add Authentication Boilerplate
