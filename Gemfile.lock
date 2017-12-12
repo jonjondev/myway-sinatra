@@ -49,6 +49,7 @@ DEPENDENCIES
   puma (= 3.10.0)
   rack-test
   rspec
+  rspec-core
   sinatra (~> 2.0.0)
   sinatra-reloader (~> 1.0)
 
