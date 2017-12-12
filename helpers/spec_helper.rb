@@ -1,5 +1,9 @@
 # A helper file made to be run before specs for setup
 
+# Runs code coverage features
+require 'simplecov'
+SimpleCov.start
+
 # Reuqires the necessary gems
 require 'sinatra'
 require 'rspec'

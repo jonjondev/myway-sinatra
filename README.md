@@ -1,6 +1,7 @@
 # MyWay: The Sinatra controller with infinite possibilities
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 [![Build Status](https://travis-ci.org/J-Mo63/myway-sinatra-api.svg?branch=master)](https://travis-ci.org/J-Mo63/myway-sinatra-api)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4bdd19a076d4fa065a59/maintainability)](https://codeclimate.com/github/J-Mo63/myway-sinatra-api/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4bdd19a076d4fa065a59/test_coverage)](https://codeclimate.com/github/J-Mo63/myway-sinatra-api/test_coverage)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 
@@ -48,7 +49,6 @@ $ rspec
 * ~~Automatic Code Reloading~~
 * ~~Controller Tests~~
 * ~~Set Up Travis~~
-* Set Up CodeCov
-* Set Up CodeCodeClimate
+* ~~Set Up CodeCodeClimate~~
 * Add Template Generation
 * Add APIDoc/Swagger
