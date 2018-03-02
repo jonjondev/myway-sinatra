@@ -2,7 +2,11 @@
 module ExampleHelper
 
   def example_test
-    "this is text from the example helper"
+  	user_full_name = User.first(:id).full_name
+
+  	if user_full_name != nil
+  		user_full_name
+  	end
   end
 
 end

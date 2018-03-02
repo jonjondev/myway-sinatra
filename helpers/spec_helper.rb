@@ -1,5 +1,7 @@
 # A helper file made to be run before specs for setup
 
+ENV['RACK_ENV'] = 'test'
+
 # Runs code coverage features
 require 'simplecov'
 SimpleCov.start
@@ -18,5 +20,4 @@ RSpec.configure do |conf|
 end
 
 # Sets up the testing environment
-ENV['RACK_ENV'] = 'test'
 set :environement, :test

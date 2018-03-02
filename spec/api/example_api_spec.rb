@@ -2,7 +2,7 @@
 require File.expand_path(File.join('helpers', 'spec_helper'))
 
 # Test for example api routes
-describe 'ApplicationController' do
+describe 'ExampleApi' do
 
 	# Defines app as base api
   def app
@@ -20,8 +20,8 @@ describe 'ApplicationController' do
 
 		it "it returns the right params" do
 		  parsed_body = JSON.parse(last_response.body)
-		  expect(parsed_body["title"]).to eq("an example value")
-		  expect(parsed_body["body"]).to eq("this is text from the api helper")
+		  expect(parsed_body['title']).to eq("an example value")
+		  expect(parsed_body['body']).to eq("this is text from the api helper")
 		end
 
 	end
@@ -38,7 +38,7 @@ describe 'ApplicationController' do
 
 		it "it returns the right params" do
 		  parsed_body = JSON.parse(last_response.body)
-		  expect(parsed_body["content_id"]).to eq(@id)
+		  expect(parsed_body['content_id']).to eq(@id)
 		end
 
 	end

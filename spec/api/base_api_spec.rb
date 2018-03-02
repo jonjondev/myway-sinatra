@@ -2,7 +2,7 @@
 require File.expand_path(File.join('helpers', 'spec_helper'))
 
 # Test for base api routes
-describe 'ApplicationController' do
+describe 'BaseApi' do
 
 	# Defines app as base api
   def app
