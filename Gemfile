@@ -7,8 +7,19 @@ ruby '2.4.1'
 # Core Gems
 gem 'sinatra', '~> 2.0.1'
 gem 'sinatra-contrib', '~> 2.0.1'
+
+# Webserver
 gem 'puma', '3.10.0'
-gem 'json', '~> 2.0.2'
+
+# API Componenets
+gem 'json', '~> 1.8'
+
+# Database
+gem 'data_mapper', '~> 1.2.0'
+gem 'dm-postgres-adapter', '~> 1.2.0'
+
+# Authentication
+gem 'bcrypt', '~> 3.1.11'
 
 # Testing & Maintainance
 gem 'rspec', '3.7.0'

@@ -7,6 +7,7 @@ map('/example') { run ExampleController }
 # Define all api modules here as routes
 map('/api/v1') {
 	map('/example') { run ExampleApi }
+	map('/users') { run UserApi }
 	run BaseApi
 }
 

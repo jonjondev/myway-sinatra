@@ -1,4 +1,4 @@
-# A controller for the example module
+# An api controller for the example module
 class ExampleApi < BaseApi
 
 	# Returns a JSON object to the client at localhost:3000/api/v1/example
