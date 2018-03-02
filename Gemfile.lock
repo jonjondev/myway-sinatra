@@ -116,6 +116,7 @@ DEPENDENCIES
   data_mapper (~> 1.2.0)
   dm-postgres-adapter (~> 1.2.0)
   dm-sqlite-adapter (= 1.2.0)
+  do_sqlite3
   json (~> 1.8)
   puma (= 3.10.0)
   rack-test (= 0.8.2)
