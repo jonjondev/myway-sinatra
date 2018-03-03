@@ -4,6 +4,6 @@ class ExampleController < ApplicationController
 
 	# Displays example.rb at localhost:3000/example
   get '/' do
-	  erb :example
+	  erb :'example/example'
 	end
 end
