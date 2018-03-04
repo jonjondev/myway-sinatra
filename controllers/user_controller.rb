@@ -2,6 +2,11 @@
 class UserController < ApplicationController
 	helpers UserHelper
 
+	# before actions
+	before do
+    authenticate
+  end
+
 	# index
   get '/' do
   	load_users
@@ -72,7 +77,6 @@ class UserController < ApplicationController
   	{ first_name: get_param(@user, :first_name), 
 	  	last_name: get_param(@user, :last_name),
 	  	email: get_param(@user, :email),
-	  	salt: get_param(@user, :salt),
 	  	password_hash: get_param(@user, :password_hash) }
 	end
 

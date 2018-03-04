@@ -5,6 +5,19 @@
 	</head>
 	<body>
 		<h1> MyWay Sinatra Framework </h1>
+		<p>
+			<% if logged_in? %>
+				<%= "Logged in as #{current_user.full_name}" %>
+				<form action="/sessions" method="post">
+					<input name="_method" type="hidden" value="delete" />
+				  	<input type="submit" value="logout">
+				</form>
+			<% else %>
+				<a href="/login">Login</a>
+				<a href="/signup">Signup</a>
+			<% end %>
+		</p>
+		<br>
 		<%= yield %>
 	</body>
 </html>

@@ -3,6 +3,7 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'bcrypt'
 require 'json'
 
 # Sets Puma as default server
@@ -10,6 +11,7 @@ configure { set :server, :puma }
 
 # Requires application files
 require File.expand_path(File.join('helpers', 'application_helper'))
+require File.expand_path(File.join('helpers', 'authentication_helper'))
 require File.expand_path(File.join('controllers', 'application_controller'))
 
 # Requires api files
