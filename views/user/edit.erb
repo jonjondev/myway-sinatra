@@ -1,0 +1,10 @@
+<form action="/users/<%= @user.id %>" method="post">
+	<input type="hidden" name="_method" value="put">
+	<%= erb :"user/_user_fields" %>
+  	<input type="submit">
+</form>
+
+<form action="/users/<%= @user.id %>" method="post">
+	<input name="_method" type="hidden" value="delete" />
+  	<input type="submit" value="delete user">
+</form>

@@ -1,7 +1,7 @@
-# Requires the spec_helper conteiniing code to set up testing
+# Requires the spec_helper containing code to set up testing
 require File.expand_path(File.join('helpers', 'spec_helper'))
 
-# Test for example api routes
+# Test for user api routes
 describe 'UserApi' do
 
 	# Defines app as base api
@@ -18,29 +18,26 @@ describe 'UserApi' do
 		  expect(last_response).to be_ok
 		end
 
-		it "it returns the right user" do
+		it "returns the right user" do
 			@user = User.last(:id)
 		  expect(@user.first_name).to eq("Greatest")
 		  expect(@user.last_name).to eq("Ever")
 		end
-
 	end
 
 	describe 'update route' do
   	before(:each) do
-	    patch "/#{User.last(:id).id}?email=greatest@ever.com"
+	    put "/#{User.last(:id).id}?email=greatest@ever.com"
 	  end
 
 	  it "returns a success" do
 		  expect(last_response).to be_ok
 		end
 
-		it "it returns the right user" do
+		it "returns the right user" do
 			@user = User.last(:id)
-			parsed_body = JSON.parse(last_response.body)
 		  expect(@user.email).to eq("greatest@ever.com")
 		end
-
 	end
 
   describe 'index route' do
@@ -52,10 +49,9 @@ describe 'UserApi' do
 		  expect(last_response).to be_ok
 		end
 
-		it "it returns the right users" do
+		it "returns the right users" do
 		  expect(last_response.body).to eq(User.all.to_json)
 		end
-
 	end
 
 	describe 'show route' do
@@ -68,11 +64,10 @@ describe 'UserApi' do
 		  expect(last_response).to be_ok
 		end
 
-		it "it returns the right user" do
+		it "returns the right user" do
 		  parsed_body = JSON.parse(last_response.body)
 		  expect(parsed_body['id']).to eq(@id)
 		end
-
 	end
 
 	describe 'destroy route' do
@@ -81,11 +76,10 @@ describe 'UserApi' do
 	    delete "/#{@user.id}"
 	  end
 
-		it "it deletes the user" do
+		it "deletes the user" do
 			expect(last_response).to be_ok
 		  expect(User.last(:id)).not_to eq(@user)
 		end
-
 	end
 
 	it "routes to a 404" do 

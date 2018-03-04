@@ -1,16 +1,24 @@
-# An api controller for the user model
-class UserApi < BaseApi
+# A controller for the user module
+class UserController < ApplicationController
+	helpers UserHelper
 
 	# index
   get '/' do
   	load_users
-	  @users.to_json
+	  erb :'user/index'
+	end
+
+	# new
+	get '/new' do
+	  @user = User.new
+	  build_user
+	  erb :'user/new'
 	end
 
 	# show
 	get '/:id' do
   	load_user
-	  @user.to_json
+	  erb :'user/show'
 	end
 
 	# create
@@ -18,6 +26,12 @@ class UserApi < BaseApi
 	  @user = User.new
 	  build_user
 	  save_user
+	end
+
+	# edit
+	get '/:id/edit' do
+  	load_user
+	  erb :'user/edit'
 	end
 
 	# update
@@ -31,6 +45,7 @@ class UserApi < BaseApi
 	delete '/:id' do
 		load_user
 		@user.destroy
+		redirect "/users"
 	end
 
 	private
@@ -49,7 +64,7 @@ class UserApi < BaseApi
 
 	def save_user
 		if @user.save
-	  	@user.to_json
+	  	redirect "users/#{@user.id}"
 	  end
 	end
 

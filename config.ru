@@ -1,12 +1,13 @@
 # Require the application config file
 require File.expand_path(File.join('config', 'application'))
 
+use Rack::MethodOverride
+
 # Define all web modules here as routes
-map('/example') { run ExampleController }
+map('/users') { run UserController }
 
 # Define all api modules here as routes
 map('/api/v1') {
-	map('/example') { run ExampleApi }
 	map('/users') { run UserApi }
 	run BaseApi
 }

@@ -1,5 +1,6 @@
 # Base api controller used for authentication and setup
 class BaseApi < Sinatra::Base
+	helpers ApplicationHelper
 	helpers ApiHelper
 	
 	before do
