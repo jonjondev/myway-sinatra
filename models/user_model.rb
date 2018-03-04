@@ -1,8 +1,5 @@
 class User
-	include DataMapper::Resource
-
-	# Basic fields
-	property :id, Serial
+	include BaseModelProperties
   
   # Custom fields
   property :first_name, String
@@ -17,5 +14,3 @@ class User
   end
 
 end
-
-DataMapper.finalize

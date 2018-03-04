@@ -1,10 +1,12 @@
 # Require the DataMapper components
 require 'data_mapper'
 require 'dm-core'
+require 'dm-timestamps'
 require 'dm-postgres-adapter'
 require 'dm-sqlite-adapter'
 
 # Require the models
+require File.expand_path(File.join('models', 'base_model_properties'))
 Dir[File.join('models', '**/*_model.rb')].each { |file| require File.expand_path(file) }
 
 
@@ -25,4 +27,5 @@ configure :production do
 end
 # :nocov:
 
+DataMapper.finalize
 DataMapper.auto_upgrade!
