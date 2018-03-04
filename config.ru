@@ -9,9 +9,9 @@ use Rack::Session::Cookie, :key => 'rack.session',
                            :secret => 'some_secret'
 
 # Define all web modules here as routes
-map('/users') { run UserController }
 map('/sessions') { run SessionsController }
 map('/registrations') { run RegistrationsController }
+map('/users') { run UserController }
 
 # Define all api modules here as routes
 map('/api/v1') {

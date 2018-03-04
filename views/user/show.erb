@@ -1,2 +1,9 @@
-<h2>user/show.erb</h2>
-<h3><%= @user.full_name if @user != nil %></h3>
+<h2>Show User</h2>
+<a href="/users">view all users</a>
+<% if @user != nil %>
+	<p>
+		<b>Name: </b><%= @user.full_name %>
+		<br>
+		<b>Email: </b><%= @user.email %>
+	</p>
+<% end %>

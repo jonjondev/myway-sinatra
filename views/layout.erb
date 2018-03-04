@@ -4,20 +4,29 @@
 		<title>MyWay Sinatra Framework</title>
 	</head>
 	<body>
-		<h1> MyWay Sinatra Framework </h1>
+		<h1>
+			<a href="/">MyWay Sinatra Framework</a>
+		</h1>
 		<p>
 			<% if logged_in? %>
-				<%= "Logged in as #{current_user.full_name}" %>
-				<form action="/sessions" method="post">
-					<input name="_method" type="hidden" value="delete" />
-				  	<input type="submit" value="logout">
-				</form>
+				<table>
+					<tr>
+						<td>
+							<%= "Logged in as #{current_user.full_name}" %>
+						</td>
+						<td>
+							<form action="/sessions" method="post">
+								<input name="_method" type="hidden" value="delete" />
+							  	<input type="submit" value="Logout">
+							</form>
+						</td>
+					</tr>
+				</table>
 			<% else %>
 				<a href="/login">Login</a>
 				<a href="/signup">Signup</a>
 			<% end %>
 		</p>
-		<br>
 		<%= yield %>
 	</body>
 </html>
