@@ -2,7 +2,7 @@
 source "https://rubygems.org"
 
 # Ruby Version
-ruby '2.4.1'
+ruby '2.5.0'
 
 # Core Gems
 gem 'sinatra', '~> 2.0.1'
