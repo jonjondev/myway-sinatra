@@ -8,14 +8,14 @@ class SessionsController < ApplicationController
 		@user = User.first(email: params[:email])
     if @user != nil && verify_password?
 	    session[:email] = @user.email
-	    redirect "/"
+	    redirect '/'
     end
 	end
 
 	# destroy
 	delete '/' do
 		session[:email] = nil
-  	redirect "/"
+  	redirect '/'
 	end
 
 	private

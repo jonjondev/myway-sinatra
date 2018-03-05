@@ -16,14 +16,14 @@ describe 'SessionsController' do
   # create
 	describe 'create route' do
 		def create_user
-			if User.first(email: @email).nil?
-				@email = "#{SecureRandom.hex}@#{SecureRandom.hex}.com"
-				User.create!(first_name: "Test", last_name: "User", email: @email, password_hash: BCrypt::Password.create("password"))
+			if User.first(email: "greatest@ever.org").nil?
+				User.create(first_name: "Greatest", last_name: "Ever", email: "greatest@ever.org", password_hash: BCrypt::Password.create("password"))
 			end
 		end
 
 		def call_create_route
-			post "/?email=#{@email}&password=password"
+			@user = User.last(:id)
+			post "/?email=#{@user.email}&password=password"
 		end
 
 		describe 'when unauthenticated' do
@@ -32,12 +32,8 @@ describe 'SessionsController' do
 		    call_create_route
 		  end
 
-		  it "redirects" do
-			  expect(last_response).to be_redirect
-			end
-
 			it "adds the user to the session" do
-				expect(session[:email]).to eq(@email)
+				expect(session[:email]).to eq(@user.email)
 			end
 		end
 
@@ -52,9 +48,9 @@ describe 'SessionsController' do
 			end
 
 			it "redirects to home" do
-		  follow_redirect!
-		  expect(last_request.url).to eq('http://example.org/')
-		end
+			  follow_redirect!
+			  expect(last_request.url).to eq('http://example.org/')
+			end
 		end
 	end
 
