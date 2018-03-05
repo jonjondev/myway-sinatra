@@ -18,11 +18,13 @@ class ApplicationController < Sinatra::Base
 
 	# signup
 	get '/signup' do
+		redirect '/' if logged_in?
 	  erb :'sessions/sign_up'
 	end
 
 	# login
 	get '/login' do
+		redirect '/' if logged_in?
 	  erb :'sessions/login'
 	end
 

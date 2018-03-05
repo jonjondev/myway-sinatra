@@ -3,8 +3,8 @@ class RegistrationsController < ApplicationController
 
 	# create
 	post '/' do
+		redirect '/' if logged_in?
 	  @password_hash = BCrypt::Password.create(params[:password])
-
 	  create_user
 	end
 

@@ -3,6 +3,8 @@ class SessionsController < ApplicationController
 
 	# create
 	post '/' do
+		redirect '/' if logged_in?
+		
 		@user = User.first(email: params[:email])
     if @user != nil && verify_password?
 	    session[:email] = @user.email
