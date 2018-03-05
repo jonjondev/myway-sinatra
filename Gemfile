@@ -16,7 +16,10 @@ gem 'json', '~> 1.8'
 
 # Database
 gem 'data_mapper', '~> 1.2.0'
-gem 'dm-postgres-adapter', '~> 1.2.0'
+
+group :development, :production do
+	gem 'dm-postgres-adapter', '~> 1.2.0'
+end
 
 # Authentication
 gem 'bcrypt', '~> 3.1.11'
