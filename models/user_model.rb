@@ -4,7 +4,7 @@ class User
   # Custom fields
   property :first_name, String
   property :last_name, String
-  property :email, String
+  property :email, String, unique: true  
   property :password_hash, BCryptHash
 
   # Object methods
