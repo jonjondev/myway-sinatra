@@ -5,6 +5,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require 'bcrypt'
 require 'json'
+require 'pry'
 
 # Sets Puma as default server
 configure { set :server, :puma }

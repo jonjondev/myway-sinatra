@@ -10,6 +10,7 @@ SimpleCov.start
 require 'sinatra'
 require 'rspec'
 require 'rack/test'
+require 'pry'
 
 # Requires all run project files
 require File.expand_path(File.join('config', 'application'))
