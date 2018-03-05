@@ -17,13 +17,6 @@ before_script:
 script: bundle exec rspec
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
-services:
-  - postgresql
-before_install:
-  - sudo apt-get remove -y postgresql-9.2
-  - sudo apt-get update
-  - sudo apt-get install postgresql
-  - sudo apt-get install postgresql-server-dev-all
 deploy:
   provider: heroku
   app: myway-test
