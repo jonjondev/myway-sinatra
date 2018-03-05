@@ -57,7 +57,6 @@ class UserApi < BaseApi
   	{ first_name: get_param(@user, :first_name), 
 	  	last_name: get_param(@user, :last_name),
 	  	email: get_param(@user, :email),
-	  	salt: get_param(@user, :salt),
 	  	password_hash: get_param(@user, :password_hash) }
 	end
 
