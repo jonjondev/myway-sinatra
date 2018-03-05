@@ -22,3 +22,11 @@ end
 
 # Sets up the testing environment
 set :environement, :test
+
+# Provides a mock login function
+def sign_in_user
+	if (User.first(email: "greatest@ever.com").nil?)
+  	User.create(first_name: "Test", last_name: "User", email: "test@user.com", password_hash: BCrypt::Password.create("password"))
+  end
+	env "rack.session", { email: "test@user.com" }
+end
