@@ -16,12 +16,8 @@ gem 'json', '~> 1.8'
 
 # Database
 gem 'data_mapper', '~> 1.2.0'
-
-# group :development, :production do
-# 	gem 'dm-postgres-adapter', '~> 1.2.0'
-# end
-
 gem 'dm-postgres-adapter', '~> 1.2.0'
+gem 'dm-sqlite-adapter', '1.2.0'
 
 # Authentication
 gem 'bcrypt', '~> 3.1.11'
@@ -31,5 +27,4 @@ gem 'rspec', '3.7.0'
 gem 'rspec-core', '3.7.0'
 gem 'rack-test', '0.8.2'
 gem 'simplecov', '0.14.1'
-gem 'dm-sqlite-adapter', '1.2.0'
 gem 'pry'
