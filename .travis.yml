@@ -1,32 +1,27 @@
 env:
   global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-    - CC_TEST_REPORTER_ID=9ada8acb671fdc827dd285f35f2844fb99218d61f8f5e1c4142c1d78e2464bc8
-language: ruby
+  - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+  - CC_TEST_REPORTER_ID=9ada8acb671fdc827dd285f35f2844fb99218d61f8f5e1c4142c1d78e2464bc8
 language: ruby
 cache: bundler
 rvm:
-  - 2.5.0
+- 2.5.0
 branches:
   only:
-    - master
+  - master
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script: bundle exec rspec
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 services:
-  - postgresql
-before_install:
-  - sudo apt-get remove -y postgresql-9.2
-  - sudo apt-get update
-  - sudo apt-get install postgresql
-  - sudo apt-get install postgresql-server-dev-all
+- postgresql
 deploy:
   provider: heroku
   app: myway-test
   on: master
   api_key:
-    secure: gMGHbIWh54csmSegp12r+zFSXSeQbNZSjMe8Gj4HPEsJJxTYQuhRtOXDcIrSN8pyG1aYKz8O5cZB8CH5WiznWPu/cHG7EU81ir8P7JL2D85gdLM1KZqTAp9x8ESHUU8PUEErXGsLyBrMpwJC40vjvTrRP4O6nczi8D3iWhkmWYcX0OdmGlh4Jn6NqZs46WrBzWUNy/ldGMnml79AnpYaZLmXAea80x3AN6yAobVsvtqIozXLmjmDdIkrBl4ufvqPDmMCmsAkYi71xAPV4K/m+AH3yN0OaO0ImFH5tWT4FJPoTYqe5KQGss8N3cs6ld1a4LqDp658sWq3i94ZEl8Dlb8svizesYBdLdrfzwrQL39e3AlnoXpAuF62jXW4RDM2RrY+UD7g1zFgB6DZ869tCajy0ziYg1jVOBCPWQitrNM5hYUxm4LNv3CYYxZCwAMAR/112QkDkegvvgto0yDqGpz6YbUntfYrZHvS9d4WXKSy8KYTRVhwrvR2KXk8yG1709fvHsNBdEQltJWJVlpCa2bVFAe5ZQEdi1kRY5EoFQ9qsnwknmWDzMKOgT9Fk4vfXkc8R/gLqpfnJh8HdvXAhWW2LJ32oJdg9a8xZJ+QleZVoFG/MvVuEnY+E0U7jagfpybIuKbcq22UC5fWCYxj/oxBw0+oupifOl9366d+SAI=
+    secure: SHlvlc4LKwuYTXh5VK2ygNEOQgpURR+G8ZE4umpIzDTWnDsmJzjqquf/WZhGNW6ijIS1RkxMN1jgz97nPzk9Q6NqMM28RfTs7sIalfN5h9Pe3gnmSR0rrnCZC9kulGqGigYiP6qGEimejGmzBqb+mxsM4sbrX5vF5Y292wKesaX+GMYMEOIlJWDzEQeIyKIH6RymOJOLVNGesdOYH3rscyGe2Y/TdH4TPZdg8P8U1MFbEY8d2vhjcd7XCrW+qtp+tI8GkBIY6tyGjp6hBWjLVzOAERkx95WJjhJ7iC1/6pOiHZhGztQ4kX5TnyazG7Oe+x/nkWLJx4jjjXPPikSAhatQNxcbpxyaVheTw6IxYcAc22SZEXY0vHOykKbCLdzdVlOKwaocpvPqCXu5b47PEtT9l3vRXIgONXNySjKGGQ0lm+hYtq/iJ10bI46WnI+K8NgDfB3PsJGQJqDpqz9Blx+vDTkMebZe7tORCFMEOkppDAFLKrzhCEEzeTlOwtcB6izZok5vWbpGz66zccIiwMVt+xTtjgWAmEtp2bgDYHxI+32zu2aPDuUy42d+ivpW7jHBUyjmstjoL2BahWDjh1sYflWKRWQvLL2yMbUZhK1JtsVjU594sT4Wf37HBkDogRn9a9CxS8EVoPzucOhlByr1oAZYjwjSNZLZDt5NpEY=
