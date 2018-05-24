@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://i.imgur.com/dYBREh2.png" width="65%">
+</p>
+
 # MyWay: The Sinatra framework with infinite possibilities
 [![Build Status](https://travis-ci.org/J-Mo63/myway-sinatra.svg?branch=master)](https://travis-ci.org/J-Mo63/myway-sinatra)
 [![Maintainability](https://api.codeclimate.com/v1/badges/4bdd19a076d4fa065a59/maintainability)](https://codeclimate.com/github/J-Mo63/myway-sinatra-api/maintainability)
