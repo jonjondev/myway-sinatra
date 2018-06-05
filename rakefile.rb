@@ -1,3 +1,3 @@
-task :run_it_myway do
-  `puma`
+task :run_myway do
+  system('puma')
 end

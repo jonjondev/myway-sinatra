@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A helper file made to be run before specs for setup
 
 ENV['RACK_ENV'] = 'test'
@@ -6,7 +8,7 @@ ENV['RACK_ENV'] = 'test'
 require 'simplecov'
 SimpleCov.start
 
-# Reuqires the necessary gems
+# Requires the necessary gems
 require 'sinatra'
 require 'rspec'
 require 'rack/test'
@@ -25,8 +27,13 @@ set :environement, :test
 
 # Provides a mock login function
 def sign_in_user
-	if (User.first(email: "greatest@ever.com").nil?)
-  	User.create(first_name: "Test", last_name: "User", email: "test@user.com", password_hash: BCrypt::Password.create("password"))
+  if User.first(email: 'greatest@ever.com').nil?
+    hash = BCrypt::Password.create('password')
+
+    User.create(first_name: 'Test',
+                last_name: 'User',
+                email: 'test@user.com',
+                password_hash: hash)
   end
-	env "rack.session", { email: "test@user.com" }
+  env 'rack.session', email: 'test@user.com'
 end

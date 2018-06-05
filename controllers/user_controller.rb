@@ -1,83 +1,82 @@
+# frozen_string_literal: true
+
 # A controller for the user module
 class UserController < ApplicationController
-	helpers UserHelper
+  helpers UserHelper
 
-	# before actions
-	before do
+  # before actions
+  before do
     authenticate
   end
 
-	# index
+  # index
   get '/' do
-  	load_users
-	  erb :'user/index'
-	end
+    load_users
+    erb :'user/index'
+  end
 
-	# new
-	get '/new' do
-	  @user = User.new
-	  build_user
-	  erb :'user/new'
-	end
+  # new
+  get '/new' do
+    @user = User.new
+    build_user
+    erb :'user/new'
+  end
 
-	# show
-	get '/:id' do
-  	load_user
-	  erb :'user/show'
-	end
+  # show
+  get '/:id' do
+    load_user
+    erb :'user/show'
+  end
 
-	# create
-	post '/' do
-	  @user = User.new
-	  build_user
-	  save_user
-	end
+  # create
+  post '/' do
+    @user = User.new
+    build_user
+    save_user
+  end
 
-	# edit
-	get '/:id/edit' do
-  	load_user
-	  erb :'user/edit'
-	end
+  # edit
+  get '/:id/edit' do
+    load_user
+    erb :'user/edit'
+  end
 
-	# update
-	put '/:id' do
-	  load_user
-	  build_user
-	  save_user
-	end
+  # update
+  put '/:id' do
+    load_user
+    build_user
+    save_user
+  end
 
-	# destroy
-	delete '/:id' do
-		load_user
-		@user.destroy
-		redirect "/users"
-	end
+  # destroy
+  delete '/:id' do
+    load_user
+    @user.destroy
+    redirect '/users'
+  end
 
-	private
+  private
 
-	def load_users
-		@users = User.all
-	end
+  def load_users
+    @users = User.all
+  end
 
-	def load_user
-		@user = User.get(params[:id])
-	end
+  def load_user
+    @user = User.get(params[:id])
+  end
 
-	def build_user
-		@user.attributes = user_params
-	end
+  def build_user
+    @user.attributes = user_params
+  end
 
-	def save_user
-		if @user.save
-	  	redirect "users/#{@user.id}"
-	  end
-	end
+  def save_user
+    redirect "users/#{@user.id}" if @user.save
+  end
 
-	def user_params
-  	{ first_name: get_param(@user, :first_name), 
-	  	last_name: get_param(@user, :last_name),
-	  	email: get_param(@user, :email),
-	  	password_hash: get_param(@user, :password_hash) }
-	end
-
+  def user_params
+    { first_name: get_param(@user, :first_name),
+      last_name: get_param(@user, :last_name),
+      email: get_param(@user, :email),
+      password_hash: get_param(@user, :password_hash) }
+  end
 end

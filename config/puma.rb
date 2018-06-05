@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 workers Integer(ENV['WEB_CONCURRENCY'] || 0)
 threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
 threads threads_count, threads_count
@@ -9,5 +11,5 @@ port        ENV['PORT']     || 3000
 environment ENV['RACK_ENV'] || 'development'
 
 on_worker_boot do
-	# Configures what to do on boot of each worker
+  # Configures what to do on boot of each worker
 end

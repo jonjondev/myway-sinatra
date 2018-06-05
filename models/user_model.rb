@@ -1,15 +1,16 @@
+# frozen_string_literal: true
+
 class User
-	include BaseModelProperties
-  
+  include BaseModelProperties
+
   # Custom fields
   property :first_name, String
   property :last_name, String
-  property :email, String, unique: true  
+  property :email, String, unique: true
   property :password_hash, BCryptHash
 
   # Object methods
   def full_name
     "#{first_name} #{last_name}"
   end
-
 end

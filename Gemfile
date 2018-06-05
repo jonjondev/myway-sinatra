@@ -1,5 +1,5 @@
 # A super simple gemfile
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 # Ruby Version
 ruby '2.5.0'
@@ -8,23 +8,23 @@ ruby '2.5.0'
 gem 'sinatra', '~> 2.0.1'
 gem 'sinatra-contrib', '~> 2.0.1'
 
-# Webserver
-gem 'puma', '3.10.0'
+# Web Server
+gem 'puma', '3.11.4'
 
-# API Componenets
+# API Components
 gem 'json', '~> 1.8'
 
 # Database
 gem 'data_mapper', '~> 1.2.0'
 gem 'dm-postgres-adapter', '~> 1.2.0'
-gem 'dm-sqlite-adapter', '1.2.0'
+gem 'dm-sqlite-adapter', '~> 1.2.0'
 
 # Authentication
-gem 'bcrypt', '~> 3.1.11'
+gem 'bcrypt', '3.1.12'
 
-# Testing & Maintainance
+# Testing & Maintenance
+gem 'pry'
+gem 'rack-test', '0.8.2'
 gem 'rspec', '3.7.0'
 gem 'rspec-core', '3.7.0'
-gem 'rack-test', '0.8.2'
-gem 'simplecov', '0.14.1'
-gem 'pry'
+gem 'simplecov', '0.16.1'
