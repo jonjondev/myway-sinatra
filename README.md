@@ -28,7 +28,7 @@ If you want to use the **MyWay CLI** integration for MyWay, you can install it w
 $ gem install myway-cli
 ```
 
-and you should be able to run any command with it using the `myway` prefix.
+and you should be able to run commands with it using the `myway` prefix.
 
 ## Running & Testing the Project
 
@@ -42,10 +42,10 @@ $ myway run server
 To test the project run:
 
 ```bash
-$ myway run test
+$ myway run tests
 ```
 
-*For more information, tip, and ticks, see the MyWay CLI gem [here](https://github.com/J-Mo63/myway-cli)*
+*For more information, tips, and ticks, see the MyWay CLI gem [here](https://github.com/J-Mo63/myway-cli)*
 
 ### Using the Rakefile
 
@@ -89,6 +89,10 @@ $ rake test_myway
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
 ## To Do
 
