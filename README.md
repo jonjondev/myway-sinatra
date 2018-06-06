@@ -28,7 +28,13 @@ If you want to use the **MyWay CLI** integration for MyWay, you can install it w
 $ gem install myway-cli
 ```
 
-and you should be able to run commands with it using the `myway` prefix.
+and run commands with using the `myway` prefix.
+
+You can use the CLI to generate a new project from a template with:
+
+```bash
+$ myway generate project example-project
+```
 
 ## Running & Testing the Project
 
