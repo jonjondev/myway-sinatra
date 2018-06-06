@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 # A super simple gemfile
 source 'https://rubygems.org'
 
 # Ruby Version
-ruby '2.5.0'
+ruby '2.5.1'
 
 # Core Gems
 gem 'sinatra', '~> 2.0.1'
@@ -16,6 +18,7 @@ gem 'json', '~> 1.8'
 
 # Database
 gem 'data_mapper', '~> 1.2.0'
+gem 'data_objects', git: 'git://github.com/J-Mo63/do.git'
 gem 'dm-postgres-adapter', '~> 1.2.0'
 gem 'dm-sqlite-adapter', '~> 1.2.0'
 
