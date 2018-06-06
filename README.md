@@ -27,7 +27,7 @@ $ bundle
 To get the project running at `localhost:3000` run:
 
 ```bash
-$ puma
+$ rake run_myway
 ```
 
 ## The Project Structure
@@ -61,7 +61,7 @@ $ puma
 To test the project run:
 
 ```bash
-$ rspec
+$ rake test_myway
 ```
 
 ## Contributing
