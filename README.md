@@ -22,12 +22,38 @@ Simply have bundle installed and run it in the project directory:
 $ bundle
 ```
 
-## Running the Project
+If you want to use the **MyWay CLI** integration for MyWay, you can install it with:
+
+```bash
+$ gem install myway-cli
+```
+
+and you should be able to run any command with it using the `myway` prefix.
+
+## Running & Testing the Project
+
+### Using the MyWay CLI
 
 To get the project running at `localhost:3000` run:
+```bash
+$ myway run server
+```
+
+To test the project run:
+
+```bash
+$ myway run test
+```
+
+*For more information, tip, and ticks, see the MyWay CLI gem [here](https://github.com/J-Mo63/myway-cli)*
+
+### Using the Rakefile
+
+If you're not using the CLI, you can run any of the standard commands using the included Rakefile as follows:
 
 ```bash
 $ rake run_myway
+$ rake test_myway
 ```
 
 ## The Project Structure
@@ -56,14 +82,6 @@ $ rake run_myway
      |-[views]       <- A module-organized views folder
 ```
 
-## Testing
-
-To test the project run:
-
-```bash
-$ rake test_myway
-```
-
 ## Contributing
 
 1. Fork it
@@ -84,4 +102,6 @@ $ rake test_myway
 * ~~Set Up CodeClimate~~
 * ~~Add ORM~~
 * ~~Add User Model~~
-* Add Authentication Boilerplate
+* ~~Create CLI~~
+* Add Authentication with Tokens
+* Add Self-Documenting API Feature
