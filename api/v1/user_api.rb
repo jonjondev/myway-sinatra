@@ -2,6 +2,7 @@
 
 # An api controller for the user model
 class UserApi < BaseApi
+
   # index
   get '/' do
     load_users

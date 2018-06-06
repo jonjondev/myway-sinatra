@@ -9,6 +9,10 @@ class BaseApi < Sinatra::Base
     content_type :json
   end
 
+  get '/' do
+    api_test
+  end
+
   not_found do
     status 400
     {

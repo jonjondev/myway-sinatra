@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# A user class that inherits properties from the base model
 class User
   include BaseModelProperties
 

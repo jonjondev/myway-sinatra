@@ -14,7 +14,9 @@ end
 def try_import(name)
   require name
 rescue LoadError
+  # :nocov:
   print "Import Error: #{name} not found, add to Gemfile."
+  # :nocov:
 end
 
 # Configure database environment values for testing

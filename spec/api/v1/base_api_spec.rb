@@ -10,6 +10,11 @@ describe 'BaseApi' do
     BaseApi
   end
 
+  it 'routes to the index' do
+    get '/'
+    expect(last_response).to be_ok
+  end
+
   it 'routes to a 404' do
     get '/probablyanotfounderror'
     expect(last_response).not_to be_ok

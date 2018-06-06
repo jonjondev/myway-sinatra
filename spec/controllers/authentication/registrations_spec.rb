@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Requires the spec_helper conteiniing code to set up testing
+# Requires the spec_helper containing code to set up testing
 require File.expand_path(File.join('helpers', 'spec_helper'))
 
 require 'securerandom'

@@ -15,6 +15,16 @@ describe 'ApplicationController' do
     expect(last_response).to be_ok
   end
 
+  it 'routes to signup' do
+    get '/signup'
+    expect(last_response).to be_ok
+  end
+
+  it 'routes to login' do
+    get '/login'
+    expect(last_response).to be_ok
+  end
+
   it 'routes to a 404' do
     get '/probablyanotfounderror'
     expect(last_response).not_to be_ok

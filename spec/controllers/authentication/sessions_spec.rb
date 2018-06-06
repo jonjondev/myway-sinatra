@@ -58,6 +58,53 @@ describe 'SessionsController' do
     end
   end
 
+  # destroy
+  describe 'destroy route' do
+    def create_user
+      User.first.destroy
+      User.create(first_name: 'Greatest',
+                  last_name: 'Ever',
+                  email: 'greatest@ever.org',
+                  password_hash: BCrypt::Password.create('password'))
+    end
+
+    def call_destroy_route
+      @user = User.last(:id)
+      delete '/'
+    end
+
+    describe 'when unauthenticated' do
+      before(:each) do
+        create_user
+        call_destroy_route
+      end
+
+      it 'persists no email in the session' do
+        expect(session[:email]).to eq(nil)
+      end
+    end
+
+    describe 'when authenticated' do
+      before(:each) do
+        sign_in_user
+        call_destroy_route
+      end
+
+      it 'persists no email in the session' do
+        expect(session[:email]).to eq(nil)
+      end
+
+      it 'redirects' do
+        expect(last_response).to be_redirect
+      end
+
+      it 'redirects to home' do
+        follow_redirect!
+        expect(last_request.url).to eq('http://example.org/')
+      end
+    end
+  end
+
   it 'routes to a 404' do
     get '/probably/a/not/found/error'
     expect(last_response).not_to be_ok

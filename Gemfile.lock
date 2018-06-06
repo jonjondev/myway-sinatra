@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/J-Mo63/do.git
+  revision: a2ec0001199818c2c6c7c8d6d806995088e987ac
+  specs:
+    data_objects (0.10.17)
+      addressable (~> 2.1)
+    do_postgres (0.10.17)
+      data_objects (= 0.10.17)
+    do_sqlite3 (0.10.17)
+      data_objects (= 0.10.17)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -18,8 +29,6 @@ GEM
       dm-transactions (~> 1.2.0)
       dm-types (~> 1.2.0)
       dm-validations (~> 1.2.0)
-    data_objects (0.10.17)
-      addressable (~> 2.1)
     diff-lcs (1.3)
     dm-aggregates (1.2.0)
       dm-core (~> 1.2.0)
@@ -58,10 +67,6 @@ GEM
       uuidtools (~> 2.1)
     dm-validations (1.2.0)
       dm-core (~> 1.2.0)
-    do_postgres (0.10.17)
-      data_objects (= 0.10.17)
-    do_sqlite3 (0.10.17)
-      data_objects (= 0.10.17)
     docile (1.3.1)
     fastercsv (1.5.5)
     json (1.8.6)
@@ -119,6 +124,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (= 3.1.12)
   data_mapper (~> 1.2.0)
+  data_objects!
   dm-postgres-adapter (~> 1.2.0)
   dm-sqlite-adapter (~> 1.2.0)
   json (~> 1.8)
@@ -132,7 +138,7 @@ DEPENDENCIES
   sinatra-contrib (~> 2.0.1)
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.5.1p57
 
 BUNDLED WITH
    1.16.2
