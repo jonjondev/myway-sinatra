@@ -7,8 +7,8 @@ source 'https://rubygems.org'
 ruby '2.5.1'
 
 # Core Gems
-gem 'sinatra', '~> 2.0.1'
-gem 'sinatra-contrib', '~> 2.0.1'
+gem 'sinatra', '~> 2.0.2'
+gem 'sinatra-contrib', '~> 2.0.2'
 
 # Web Server
 gem 'puma', '3.11.4'
