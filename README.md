@@ -16,12 +16,6 @@ Its structure has been built out to emulate that of Ruby on Rails and as such is
 
 ## Getting Started
 
-Simply have bundle installed and run it in the project directory:
-
-```bash
-$ bundle
-```
-
 If you want to use the **MyWay CLI** integration for MyWay, you can install it with:
 
 ```bash
@@ -34,6 +28,12 @@ You can use the CLI to generate a new project from a template with:
 
 ```bash
 $ myway generate project example-project
+```
+
+Then finally have bundle installed and run it in the project directory:
+
+```bash
+$ bundle
 ```
 
 ## Running & Testing the Project
