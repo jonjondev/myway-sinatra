@@ -74,9 +74,9 @@ class UserController < ApplicationController
   end
 
   def user_params
-    { first_name: get_param(@user, :first_name),
-      last_name: get_param(@user, :last_name),
-      email: get_param(@user, :email),
-      password_hash: get_param(@user, :password_hash) }
+    { first_name: fetch_param(@user.first_name, :first_name),
+      last_name: fetch_param(@user.last_name, :last_name),
+      email: fetch_param(@user.email, :email),
+      password_hash: fetch_param(@user.password_hash, :password) }
   end
 end

@@ -5,10 +5,10 @@ class User
   include BaseModelProperties
 
   # Custom fields
-  property :first_name, String
-  property :last_name, String
-  property :email, String, unique: true
-  property :password_hash, BCryptHash
+  property :first_name, String, required: true
+  property :last_name, String, required: true
+  property :email, String, required: true, unique: true
+  property :password_hash, BCryptHash, required: true
 
   # Object methods
   def full_name

@@ -2,8 +2,8 @@
 
 # Module for application-wide helper methods (however helpers are global anyway)
 module ApplicationHelper
-  def get_param(object, param_name)
-    params[param_name.to_sym] ? params[param_name.to_sym] : object[param_name]
+  def fetch_param(default, param_name)
+    params[param_name.to_sym] || default
   end
 
   def application_test

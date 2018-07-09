@@ -131,7 +131,7 @@ describe 'UserController' do
   # create
   describe 'create route' do
     def call_create_route
-      post '/?first_name=Greatest&last_name=Ever'
+      post '/?first_name=Greatest&last_name=Ever&email=dr@ke.com&password=hi'
     end
 
     describe 'when unauthenticated' do
@@ -150,11 +150,6 @@ describe 'UserController' do
 
       it 'redirects' do
         expect(last_response).to be_redirect
-      end
-
-      it 'redirects to the correct user' do
-        follow_redirect!
-        expect(last_request.url).to include("/users/#{User.last(:id).id}")
       end
 
       it 'creates the user' do

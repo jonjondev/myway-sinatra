@@ -26,9 +26,9 @@ class RegistrationsController < ApplicationController
   end
 
   def user_params
-    { first_name: get_param(@user, :first_name),
-      last_name: get_param(@user, :last_name),
-      email: get_param(@user, :email),
+    { first_name: fetch_param(@user, :first_name),
+      last_name: fetch_param(@user, :last_name),
+      email: fetch_param(@user, :email),
       password_hash: @password_hash }
   end
 end
