@@ -2,6 +2,10 @@
 
 # An api controller for the user model
 class UserApi < BaseApi
+  before do
+    token_authenticate
+    error_response('Missing or invalid auth-token') unless @user
+  end
 
   # index
   get '/' do

@@ -16,8 +16,11 @@ map('/registrations') { run RegistrationsController }
 map('/users') { run UserController }
 
 # Define all api modules here as routes
-map('/api/v1') do
-  map('/users') { run UserApi }
+map('/api') do
+  map('/v1') do
+    map('/sessions') { run SessionsApi }
+    map('/users') { run UserApi }
+  end
   run BaseApi
 end
 
