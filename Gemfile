@@ -24,6 +24,7 @@ gem 'dm-sqlite-adapter', '~> 1.2.0'
 
 # Authentication
 gem 'bcrypt', '3.1.12'
+gem 'redis', '4.0.1'
 
 # Testing & Maintenance
 gem 'pry'

@@ -84,6 +84,7 @@ GEM
       rack
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
+    redis (4.0.1)
     rspec (3.7.0)
       rspec-core (~> 3.7.0)
       rspec-expectations (~> 3.7.0)
@@ -131,6 +132,7 @@ DEPENDENCIES
   pry
   puma (= 3.11.4)
   rack-test (= 0.8.2)
+  redis (= 4.0.1)
   rspec (= 3.7.0)
   rspec-core (= 3.7.0)
   simplecov (= 0.16.1)
