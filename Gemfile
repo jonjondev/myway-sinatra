@@ -28,7 +28,7 @@ gem 'redis', '4.0.1'
 
 # Testing & Maintenance
 gem 'pry'
-gem 'rack-test', '0.8.2'
+gem 'rack-test', '1.0.0'
 gem 'rspec', '3.7.0'
 gem 'rspec-core', '3.7.0'
 gem 'simplecov', '0.16.1'

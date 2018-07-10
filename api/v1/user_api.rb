@@ -3,7 +3,7 @@
 # An api controller for the user model
 class UserApi < BaseApi
   before do
-    token_authenticate
+    @user = token_authenticate(fetch_token)
     error_response('Missing or invalid auth-token') unless @user
   end
 
@@ -58,9 +58,9 @@ class UserApi < BaseApi
   end
 
   def user_params
-    { first_name: fetch_param(@user, :first_name),
-      last_name: fetch_param(@user, :last_name),
-      email: fetch_param(@user, :email),
-      password_hash: fetch_param(@user, :password_hash) }
+    { first_name: params[:first_name] || @user.first_name,
+      last_name: params[:last_name] || @user.last_name,
+      email: params[:email] || @user.email,
+      password_hash: params[:password] || @user.password_hash }
   end
 end

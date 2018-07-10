@@ -4,87 +4,151 @@
 require File.expand_path(File.join('helpers', 'spec_helper'))
 
 # Test for user api routes
-describe('UserApi') do
+describe 'UserApi' do
+
   # Defines app as base api
   def app
     UserApi
   end
 
-  describe 'create route' do
-    before(:each) do
-      post '/?first_name=Greatest&last_name=Ever'
-    end
+  def create_test_user
+    hash = BCrypt::Password.create('password')
+    User.create(first_name: 'Test',
+                last_name: 'User',
+                email: 'test@user.com',
+                password_hash: hash)
+  end
 
-    it 'returns a success' do
-      expect(last_response).to be_ok
-    end
+  # Includes authentication tools
+  include AuthHelper
 
-    it 'returns the right user' do
-      @user = User.last(:id)
-      expect(@user.first_name).to eq('Greatest')
-      expect(@user.last_name).to eq('Ever')
+  before :all do
+    @user = create_test_user
+    @auth_token = generate_token(@user)
+  end
+
+  # shared examples
+  RSpec.shared_examples 'unauthenticated examples' do
+    describe 'when unauthenticated' do
+      before :each do
+        call_route
+      end
+      include_examples 'forbidden example'
     end
   end
 
-  describe 'update route' do
-    before(:each) do
-      put "/#{User.last(:id).id}?email=greatest@ever.com"
-    end
-
-    it 'returns a success' do
-      expect(last_response).to be_ok
-    end
-
-    it 'returns the right user' do
-      @user = User.last(:id)
-      expect(@user.email).to eq('greatest@ever.com')
-    end
-  end
-
+  # index route
   describe 'index route' do
-    before(:each) do
-      get '/'
-    end
+    let(:call_route) { get '/' }
 
-    it 'returns a success' do
-      expect(last_response).to be_ok
-    end
+    include_examples 'unauthenticated examples'
 
-    it 'returns the right users' do
-      expect(last_response.body).to eq(User.all.to_json)
+    describe 'when authenticated' do
+      before :each do
+        header('AUTH_TOKEN', @auth_token)
+        call_route
+      end
+
+      include_examples 'success example'
+
+      it 'returns all users' do
+        expect(last_response.body).to eq(User.all.to_json)
+      end
     end
   end
 
+  # show route
   describe 'show route' do
-    before(:each) do
+    before(:all) do
       @id = User.first(:id).id
-      get '/' + @id.to_s
     end
 
-    it 'returns a success' do
-      expect(last_response).to be_ok
-    end
+    let(:call_route) { get '/' + @id.to_s }
 
-    it 'returns the right user' do
-      parsed_body = JSON.parse(last_response.body)
-      expect(parsed_body['id']).to eq(@id)
+    include_examples 'unauthenticated examples'
+
+    describe 'when authenticated' do
+      before(:each) do
+        header('AUTH_TOKEN', @auth_token)
+        call_route
+      end
+
+      include_examples 'success example'
+
+      it 'returns the right user' do
+        parsed_body = JSON.parse(last_response.body)
+        expect(parsed_body['id']).to eq(@id)
+      end
     end
   end
 
+  # create route
+  describe 'create route' do
+    let(:call_route) do
+      post '/?first_name=Greatest&last_name=Ever&email=dr@ke.com&password=upset'
+    end
+
+    include_examples 'unauthenticated examples'
+
+    describe 'when authenticated' do
+      before(:each) do
+        header('AUTH_TOKEN', @auth_token)
+        call_route
+      end
+
+      include_examples 'success example'
+
+      it 'creates the user' do
+        user = User.last(:id)
+        expect(user.full_name).to eq('Greatest Ever')
+      end
+    end
+  end
+
+  # update route
+  describe 'update route' do
+    let(:call_route) { put "/#{User.last(:id).id}?email=greatest@ever.com" }
+
+    include_examples 'unauthenticated examples'
+
+    describe 'when authenticated' do
+      before(:each) do
+        header('AUTH_TOKEN', @auth_token)
+        call_route
+      end
+
+      include_examples 'success example'
+
+      it 'returns the right user' do
+        expect(User.last(:id).email).to eq('greatest@ever.com')
+      end
+    end
+  end
+
+  # destroy route
   describe 'destroy route' do
-    before(:each) do
-      @user = User.last(:id)
-      delete "/#{@user.id}"
+    let(:call_route) do
+      create_test_user
+      delete "/#{User.last(:id).id}"
     end
 
-    it 'deletes the user' do
-      expect(last_response).to be_ok
-      expect(User.last(:id)).not_to eq(@user)
+    include_examples 'unauthenticated examples'
+
+    describe 'when authenticated' do
+      before(:each) do
+        header('AUTH_TOKEN', @auth_token)
+        call_route
+      end
+
+      include_examples 'success example'
+
+      it 'deletes the user' do
+        expect(User.last(:id)).not_to eq(@user)
+      end
     end
   end
 
-  it 'routes to a 404' do
-    get '/probably/a/notfound/error'
-    expect(last_response).not_to be_ok
-  end
+  # bad route
+  include_examples 'bad route example'
+
 end

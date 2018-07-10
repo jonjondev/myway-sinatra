@@ -2,8 +2,7 @@
 
 # Base api controller used for authentication and setup
 class BaseApi < Sinatra::Base
-  helpers ApplicationHelper
-  helpers AuthenticationHelper
+  helpers AuthHelper
   helpers ApiHelper
 
   configure :development, :test do
@@ -16,7 +15,7 @@ class BaseApi < Sinatra::Base
   end
 
   get '/' do
-    api_test
+    api_test.to_json
   end
 
   not_found do

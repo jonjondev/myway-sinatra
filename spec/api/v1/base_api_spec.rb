@@ -15,8 +15,6 @@ describe 'BaseApi' do
     expect(last_response).to be_ok
   end
 
-  it 'routes to a 404' do
-    get '/probablyanotfounderror'
-    expect(last_response).not_to be_ok
-  end
+  # bad route
+  include_examples 'bad route example'
 end

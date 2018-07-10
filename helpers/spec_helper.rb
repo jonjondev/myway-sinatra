@@ -12,28 +12,38 @@ SimpleCov.start
 require 'sinatra'
 require 'rspec'
 require 'rack/test'
-require 'pry'
+require 'redis'
 
 # Requires all run project files
 require File.expand_path(File.join('config', 'application'))
 
+# Requires authentication tools
+require File.expand_path(File.join('helpers', 'auth_helper'))
+
 # Gives Rspec access to Rack/Test methods
-RSpec.configure do |conf|
-  conf.include Rack::Test::Methods
+RSpec.configure do |config|
+  config.include Rack::Test::Methods
 end
 
 # Sets up the testing environment
 set :environement, :test
 
-# Provides a mock login function
-def sign_in_user
-  if User.first(email: 'greatest@ever.com').nil?
-    hash = BCrypt::Password.create('password')
-
-    User.create(first_name: 'Test',
-                last_name: 'User',
-                email: 'test@user.com',
-                password_hash: hash)
+# shared examples
+RSpec.shared_examples 'forbidden example' do
+  it 'returns forbidden' do
+    expect(last_response).to be_forbidden
   end
-  env 'rack.session', email: 'test@user.com'
+end
+
+RSpec.shared_examples 'success example' do
+  it 'returns a success' do
+    expect(last_response).to be_ok
+  end
+end
+
+RSpec.shared_examples 'bad route example' do
+  it 'routes to an error' do
+    get '/probablyanotfounderror'
+    expect(last_response).not_to be_ok
+  end
 end

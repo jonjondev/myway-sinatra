@@ -14,21 +14,13 @@ configure do
   set :server, :puma
 end
 
-# Requires application files
-require File.expand_path(File.join('helpers', 'application_helper'))
-require File.expand_path(File.join('helpers', 'authentication_helper'))
-require File.expand_path(File.join('controllers', 'application_controller'))
-
 # Requires api files
+require File.expand_path(File.join('helpers', 'auth_helper'))
 require File.expand_path(File.join('helpers', 'api_helper'))
 require File.expand_path(File.join('api', 'v1', 'base_api'))
 
 # Requires other ruby files
 Dir[File.join('helpers', '**/*_helper.rb')].each do |file|
-  require File.expand_path(file)
-end
-
-Dir[File.join('controllers', '**/*_controller.rb')].each do |file|
   require File.expand_path(file)
 end
 

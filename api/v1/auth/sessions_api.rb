@@ -4,18 +4,24 @@
 class SessionsApi < BaseApi
   before do
     request.body.rewind
-    @request_payload = JSON.parse(request.body.read)
+    begin
+      @request_payload = JSON.parse(request.body.read)
+    rescue JSON::JSONError
+      error_response('Couldn\'t find any JSON in request body')
+    end
   end
 
   # create
   post '/' do
     @user = User.first(email: @request_payload['email'])
-    generate_token(@user).to_json if !@user.nil? && verify_password?
+    if !@user.nil? && verify_password?
+      { auth_token: generate_token(@user) }.to_json
+    end
   end
 
   # destroy
   delete '/' do
-    invalidate_token(@request_payload['auth_token']).to_json
+    { result: invalidate_token(@request_payload['auth_token']) }.to_json
   end
 
   private
