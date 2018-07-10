@@ -9,9 +9,9 @@
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 
-MyWay is a **barebones Sinatra framework with modular boilerplates that provide examples for both API and web-app usage**... and it's super suave.
+MyWay is a **barebones Sinatra API framework with modular boilerplates**... and it's super suave.
 
-Its structure has been built out to emulate that of Ruby on Rails and as such is naturally quite opinionated. That being said however, the project's logic is easy enough to follow and **can easily be modified to suit your needs**.
+Its structure has been built out to be naturally quite opinionated. That being said however, the project's logic is easy enough to follow and **can easily be modified to suit your needs**.
 
 
 ## Getting Started
@@ -73,19 +73,13 @@ $ rake test_myway
      |
      |-[config]      <- Configuration files for the application, models and webserver
      |
-     |-[controllers] <- Controller files suffixed with `_controller.rb`
-     |
      |-[helpers]     <- Helper files suffixed with `_helper.rb`
      |
      |-[models]      <- Model files suffixed with `_model.rb`
      |
-     |-[public]      <- A public assets folder
-     |
      |-[spec]
-     |      |
-     |      |-[v1]   <- Test files suffixed with `_spec.rb`
-     |
-     |-[views]       <- A module-organized views folder
+            |
+            |-[v1]   <- Test files suffixed with `_spec.rb`
 ```
 
 ## Contributing
@@ -113,5 +107,5 @@ This project is available as open source under the terms of the [MIT License](ht
 * ~~Add ORM~~
 * ~~Add User Model~~
 * ~~Create CLI~~
-* Add Authentication with Tokens
-* Add Self-Documenting API Feature
+* ~~Add Authentication with Tokens~~
+* Add Self-Documenting API
