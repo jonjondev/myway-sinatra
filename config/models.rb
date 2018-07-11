@@ -7,7 +7,7 @@ require 'dm-timestamps'
 
 # Require the models
 require File.expand_path(File.join('models', 'base_model_properties'))
-Dir[File.join('models', '**/*_model.rb')].each do |file|
+Dir[File.join('models', '**/*.rb')].each do |file|
   require File.expand_path(file)
 end
 

@@ -70,14 +70,14 @@ $ rake test_myway
 [root]
      |
      |-[api]
-     |     |
+     |     |-[auth]
      |     |-[v1]    <- API files suffixed with `_api.rb`
      |
      |-[config]      <- Configuration files for the application, models and webserver
      |
      |-[helpers]     <- Helper files suffixed with `_helper.rb`
      |
-     |-[models]      <- Model files suffixed with `_model.rb`
+     |-[models]      <- Model files
      |
      |-[spec]
             |
