@@ -36,6 +36,8 @@ Then finally have bundle installed and run it in the project directory:
 $ bundle
 ```
 
+Make sure you have versions of [PostgreSQL](https://www.postgresql.org) and [Redis](https://redis.io) installed as the framework uses these for model persistence and authentication tokens respectively.
+
 ## Running & Testing the Project
 
 ### Using the MyWay CLI
