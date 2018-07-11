@@ -34,7 +34,7 @@ end
 
 # Configure database environment values for production
 configure :production do
-  DataMapper.setup(:default, 'postgres://username:password@hostname/database')
+  DataMapper.setup(:default, ENV['DATABASE_URL'])
 end
 # :nocov:
 
