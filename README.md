@@ -80,7 +80,7 @@ $ rake test_myway
      |-[models]      <- Model files
      |
      |-[spec]
-            |
+            |-[auth]
             |-[v1]   <- Test files suffixed with `_spec.rb`
 ```
 
