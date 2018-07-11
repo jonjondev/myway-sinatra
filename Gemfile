@@ -19,8 +19,8 @@ gem 'json', '~> 1.8'
 # Database
 gem 'data_mapper', '~> 1.2.0'
 gem 'data_objects', git: 'git://github.com/J-Mo63/do.git'
-gem 'dm-postgres-adapter', '~> 1.2.0'
-gem 'dm-sqlite-adapter', '~> 1.2.0'
+gem 'dm-postgres-adapter', '~> 1.2.0', group: %i[development production]
+gem 'dm-sqlite-adapter', '~> 1.2.0', group: :test
 
 # Authentication
 gem 'bcrypt', '3.1.12'
