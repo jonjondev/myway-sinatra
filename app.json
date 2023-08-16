@@ -1,7 +1,7 @@
 {
   "name": "MyWay Sinatra API",
   "description": "The Sinatra controller with infinite possibilities",
-  "repository": "https://github.com/J-Mo63/myway-sinatra-api",
+  "repository": "https://github.com/jonjondev/myway-sinatra-api",
   "logo": "https://cdn.worldvectorlogo.com/logos/sinatra.svg",
   "keywords": ["ruby", "sinatra", "controller"]
 }

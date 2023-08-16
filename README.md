@@ -3,9 +3,9 @@
 </p>
 
 # MyWay: The Sinatra framework with infinite possibilities
-[![Build Status](https://travis-ci.org/J-Mo63/myway-sinatra.svg?branch=master)](https://travis-ci.org/J-Mo63/myway-sinatra)
-[![Maintainability](https://api.codeclimate.com/v1/badges/4bdd19a076d4fa065a59/maintainability)](https://codeclimate.com/github/J-Mo63/myway-sinatra-api/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/4bdd19a076d4fa065a59/test_coverage)](https://codeclimate.com/github/J-Mo63/myway-sinatra-api/test_coverage)
+[![Build Status](https://travis-ci.org/jonjondev/myway-sinatra.svg?branch=master)](https://travis-ci.org/jonjondev/myway-sinatra)
+[![Maintainability](https://api.codeclimate.com/v1/badges/4bdd19a076d4fa065a59/maintainability)](https://codeclimate.com/github/jonjondev/myway-sinatra-api/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/4bdd19a076d4fa065a59/test_coverage)](https://codeclimate.com/github/jonjondev/myway-sinatra-api/test_coverage)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 
@@ -53,7 +53,7 @@ To test the project run:
 $ myway run tests
 ```
 
-*For more information, tips, and ticks, see the MyWay CLI gem [here](https://github.com/J-Mo63/myway-cli)*
+*For more information, tips, and ticks, see the MyWay CLI gem [here](https://github.com/jonjondev/myway-cli)*
 
 ### Using the Rakefile
 

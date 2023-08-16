@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/J-Mo63/do.git
+  remote: git://github.com/jonjondev/do.git
   revision: a2ec0001199818c2c6c7c8d6d806995088e987ac
   specs:
     data_objects (0.10.17)
